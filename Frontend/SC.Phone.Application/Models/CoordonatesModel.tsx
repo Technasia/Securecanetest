@@ -1,0 +1,3 @@
+type CoordonatesModel = {
+    data: String;
+};

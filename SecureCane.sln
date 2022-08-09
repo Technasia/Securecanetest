@@ -1,0 +1,172 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{E007F653-D74E-4AF4-9890-1934BC6A9742}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{ED267873-8709-4B01-99E4-A7D9EA498FD3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{08ECA25E-6601-47DE-8BAE-7EEEED70E510}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tables", "Tables", "{9781D9F7-A537-42CF-B827-956F55D0C332}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CQRS", "CQRS", "{5CBABFFF-299B-44B4-999B-C3001D0BD8BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SC.Common.AzureTables", "Backend\Common\net6\SC.Common.AzureTables\SC.Common.AzureTables.csproj", "{73F94DAD-526F-44BC-92E8-A08640B86188}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SC.Common.AzureTables.Tests", "Backend\Common\net6\SC.Common.AzureTables.Tests\SC.Common.AzureTables.Tests.csproj", "{9486B194-C0CF-456C-8DD3-7A3F62239E6E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SC.Common.CQRS", "Backend\Common\net6\SC.Common.CQRS\SC.Common.CQRS.csproj", "{DDBF6054-4D93-4E7D-A367-AA015E129106}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserManagement", "UserManagement", "{BCD481ED-A072-4C13-8602-7D3AF802AC15}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SC.UserManagment.Api", "Backend\UserManagment\SC.UserManagment.Api\SC.UserManagment.Api.csproj", "{18634AA6-A232-44BD-95F0-152F21617AB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SC.UserManagment.Application", "Backend\UserManagment\SC.UserManagment.Application\SC.UserManagment.Application.csproj", "{53AEF114-83E4-497B-B50E-AFE4D88AF968}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SC.UserManagment.AzureTable", "Backend\UserManagment\SC.UserManagment.AzureTable\SC.UserManagment.AzureTable.csproj", "{BC4CBE9D-0D25-4D9A-A223-D6CB65F52475}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SC.UserManagment.Tests", "Backend\UserManagment\SC.UserManagment.Tests\SC.UserManagment.Tests.csproj", "{FB2AD62E-0680-47B1-A12F-1000D3C6775F}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{3F459430-9273-4340-AC76-05FFB0D4D83C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mailer", "Mailer", "{E2CEFB3A-8F00-4A26-B815-E5FDB2A53AB9}"
+	ProjectSection(SolutionItems) = preProject
+		Backend\secure_cane_mailer\.dockerignore = Backend\secure_cane_mailer\.dockerignore
+		Backend\secure_cane_mailer\.gitignore = Backend\secure_cane_mailer\.gitignore
+		Backend\secure_cane_mailer\Dockerfile = Backend\secure_cane_mailer\Dockerfile
+		Backend\secure_cane_mailer\Dockerfile.Dev = Backend\secure_cane_mailer\Dockerfile.Dev
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tracker", "Tracker", "{10F01E6D-454D-4285-B23D-4D14D68E4CDC}"
+	ProjectSection(SolutionItems) = preProject
+		Backend\TrackerAPI\.dockerignore = Backend\TrackerAPI\.dockerignore
+		Backend\TrackerAPI\.gitignore = Backend\TrackerAPI\.gitignore
+		Backend\TrackerAPI\Dockerfile = Backend\TrackerAPI\Dockerfile
+		Backend\TrackerAPI\Dockerfile.Dev = Backend\TrackerAPI\Dockerfile.Dev
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RedisCommander", "RedisCommander", "{110E0781-35E9-4221-89E4-FA29BAA36A1A}"
+	ProjectSection(SolutionItems) = preProject
+		Backend\RedisCommander\connections.json = Backend\RedisCommander\connections.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{F6B35CF3-FBF9-4760-B423-9494BE9FE8B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applicatif", "Applicatif", "{E7B6FC6B-AADF-44C2-AC97-CC1A0F5F802A}"
+	ProjectSection(SolutionItems) = preProject
+		Frontend\SC.Site.Application\frontend\.dockerignore = Frontend\SC.Site.Application\frontend\.dockerignore
+		Frontend\SC.Site.Application\frontend\.gitignore = Frontend\SC.Site.Application\frontend\.gitignore
+		Frontend\SC.Site.Application\frontend\Dockerfile = Frontend\SC.Site.Application\frontend\Dockerfile
+		Frontend\SC.Site.Application\frontend\Dockerfile.Dev = Frontend\SC.Site.Application\frontend\Dockerfile.Dev
+		Frontend\SC.Site.Application\frontend\nginx\nginx.conf = Frontend\SC.Site.Application\frontend\nginx\nginx.conf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Boutique", "Boutique", "{70982ECE-799E-4093-BE8A-E12D0B815790}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Canne", "Canne", "{40ABD009-774A-47FC-BC5F-12A300EBF17A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FakeClient", "FakeClient", "{77A9659A-A3AB-43AC-B4C5-913BA54E7F71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KeyCloak", "KeyCloak", "{678DB6AE-85E1-4BB6-9007-5F80F7BDC0A2}"
+	ProjectSection(SolutionItems) = preProject
+		Backend\SSO\KeyCloak\Dockerfile = Backend\SSO\KeyCloak\Dockerfile
+		Backend\SSO\KeyCloak\Dockerfile.Dev = Backend\SSO\KeyCloak\Dockerfile.Dev
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSO", "SSO", "{A4FDA890-8DFC-4B8E-8D65-5B1937857B70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "conf", "conf", "{26225A07-D7E2-472B-ABCA-6DF1613366AC}"
+	ProjectSection(SolutionItems) = preProject
+		Backend\SSO\KeyCloak\conf\applifront-realm.json = Backend\SSO\KeyCloak\conf\applifront-realm.json
+		Backend\SSO\KeyCloak\conf\master-realm.json = Backend\SSO\KeyCloak\conf\master-realm.json
+		Backend\SSO\KeyCloak\conf\master-users-0.json = Backend\SSO\KeyCloak\conf\master-users-0.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DockerDev|Any CPU = DockerDev|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73F94DAD-526F-44BC-92E8-A08640B86188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73F94DAD-526F-44BC-92E8-A08640B86188}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73F94DAD-526F-44BC-92E8-A08640B86188}.DockerDev|Any CPU.ActiveCfg = Release|Any CPU
+		{73F94DAD-526F-44BC-92E8-A08640B86188}.DockerDev|Any CPU.Build.0 = Release|Any CPU
+		{73F94DAD-526F-44BC-92E8-A08640B86188}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73F94DAD-526F-44BC-92E8-A08640B86188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9486B194-C0CF-456C-8DD3-7A3F62239E6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9486B194-C0CF-456C-8DD3-7A3F62239E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9486B194-C0CF-456C-8DD3-7A3F62239E6E}.DockerDev|Any CPU.ActiveCfg = Release|Any CPU
+		{9486B194-C0CF-456C-8DD3-7A3F62239E6E}.DockerDev|Any CPU.Build.0 = Release|Any CPU
+		{9486B194-C0CF-456C-8DD3-7A3F62239E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9486B194-C0CF-456C-8DD3-7A3F62239E6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDBF6054-4D93-4E7D-A367-AA015E129106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDBF6054-4D93-4E7D-A367-AA015E129106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDBF6054-4D93-4E7D-A367-AA015E129106}.DockerDev|Any CPU.ActiveCfg = Release|Any CPU
+		{DDBF6054-4D93-4E7D-A367-AA015E129106}.DockerDev|Any CPU.Build.0 = Release|Any CPU
+		{DDBF6054-4D93-4E7D-A367-AA015E129106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDBF6054-4D93-4E7D-A367-AA015E129106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18634AA6-A232-44BD-95F0-152F21617AB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18634AA6-A232-44BD-95F0-152F21617AB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18634AA6-A232-44BD-95F0-152F21617AB8}.DockerDev|Any CPU.ActiveCfg = Release|Any CPU
+		{18634AA6-A232-44BD-95F0-152F21617AB8}.DockerDev|Any CPU.Build.0 = Release|Any CPU
+		{18634AA6-A232-44BD-95F0-152F21617AB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18634AA6-A232-44BD-95F0-152F21617AB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53AEF114-83E4-497B-B50E-AFE4D88AF968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53AEF114-83E4-497B-B50E-AFE4D88AF968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53AEF114-83E4-497B-B50E-AFE4D88AF968}.DockerDev|Any CPU.ActiveCfg = Release|Any CPU
+		{53AEF114-83E4-497B-B50E-AFE4D88AF968}.DockerDev|Any CPU.Build.0 = Release|Any CPU
+		{53AEF114-83E4-497B-B50E-AFE4D88AF968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53AEF114-83E4-497B-B50E-AFE4D88AF968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC4CBE9D-0D25-4D9A-A223-D6CB65F52475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC4CBE9D-0D25-4D9A-A223-D6CB65F52475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC4CBE9D-0D25-4D9A-A223-D6CB65F52475}.DockerDev|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC4CBE9D-0D25-4D9A-A223-D6CB65F52475}.DockerDev|Any CPU.Build.0 = Debug|Any CPU
+		{BC4CBE9D-0D25-4D9A-A223-D6CB65F52475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC4CBE9D-0D25-4D9A-A223-D6CB65F52475}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB2AD62E-0680-47B1-A12F-1000D3C6775F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB2AD62E-0680-47B1-A12F-1000D3C6775F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB2AD62E-0680-47B1-A12F-1000D3C6775F}.DockerDev|Any CPU.ActiveCfg = Release|Any CPU
+		{FB2AD62E-0680-47B1-A12F-1000D3C6775F}.DockerDev|Any CPU.Build.0 = Release|Any CPU
+		{FB2AD62E-0680-47B1-A12F-1000D3C6775F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB2AD62E-0680-47B1-A12F-1000D3C6775F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F459430-9273-4340-AC76-05FFB0D4D83C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F459430-9273-4340-AC76-05FFB0D4D83C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F459430-9273-4340-AC76-05FFB0D4D83C}.DockerDev|Any CPU.ActiveCfg = DockerDev|Any CPU
+		{3F459430-9273-4340-AC76-05FFB0D4D83C}.DockerDev|Any CPU.Build.0 = DockerDev|Any CPU
+		{3F459430-9273-4340-AC76-05FFB0D4D83C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F459430-9273-4340-AC76-05FFB0D4D83C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{08ECA25E-6601-47DE-8BAE-7EEEED70E510} = {E007F653-D74E-4AF4-9890-1934BC6A9742}
+		{9781D9F7-A537-42CF-B827-956F55D0C332} = {08ECA25E-6601-47DE-8BAE-7EEEED70E510}
+		{5CBABFFF-299B-44B4-999B-C3001D0BD8BE} = {08ECA25E-6601-47DE-8BAE-7EEEED70E510}
+		{73F94DAD-526F-44BC-92E8-A08640B86188} = {9781D9F7-A537-42CF-B827-956F55D0C332}
+		{9486B194-C0CF-456C-8DD3-7A3F62239E6E} = {9781D9F7-A537-42CF-B827-956F55D0C332}
+		{DDBF6054-4D93-4E7D-A367-AA015E129106} = {5CBABFFF-299B-44B4-999B-C3001D0BD8BE}
+		{BCD481ED-A072-4C13-8602-7D3AF802AC15} = {E007F653-D74E-4AF4-9890-1934BC6A9742}
+		{18634AA6-A232-44BD-95F0-152F21617AB8} = {BCD481ED-A072-4C13-8602-7D3AF802AC15}
+		{53AEF114-83E4-497B-B50E-AFE4D88AF968} = {BCD481ED-A072-4C13-8602-7D3AF802AC15}
+		{BC4CBE9D-0D25-4D9A-A223-D6CB65F52475} = {BCD481ED-A072-4C13-8602-7D3AF802AC15}
+		{FB2AD62E-0680-47B1-A12F-1000D3C6775F} = {BCD481ED-A072-4C13-8602-7D3AF802AC15}
+		{E2CEFB3A-8F00-4A26-B815-E5FDB2A53AB9} = {E007F653-D74E-4AF4-9890-1934BC6A9742}
+		{10F01E6D-454D-4285-B23D-4D14D68E4CDC} = {E007F653-D74E-4AF4-9890-1934BC6A9742}
+		{110E0781-35E9-4221-89E4-FA29BAA36A1A} = {E007F653-D74E-4AF4-9890-1934BC6A9742}
+		{F6B35CF3-FBF9-4760-B423-9494BE9FE8B4} = {ED267873-8709-4B01-99E4-A7D9EA498FD3}
+		{E7B6FC6B-AADF-44C2-AC97-CC1A0F5F802A} = {ED267873-8709-4B01-99E4-A7D9EA498FD3}
+		{70982ECE-799E-4093-BE8A-E12D0B815790} = {ED267873-8709-4B01-99E4-A7D9EA498FD3}
+		{77A9659A-A3AB-43AC-B4C5-913BA54E7F71} = {40ABD009-774A-47FC-BC5F-12A300EBF17A}
+		{678DB6AE-85E1-4BB6-9007-5F80F7BDC0A2} = {A4FDA890-8DFC-4B8E-8D65-5B1937857B70}
+		{A4FDA890-8DFC-4B8E-8D65-5B1937857B70} = {E007F653-D74E-4AF4-9890-1934BC6A9742}
+		{26225A07-D7E2-472B-ABCA-6DF1613366AC} = {678DB6AE-85E1-4BB6-9007-5F80F7BDC0A2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B2A361F-E742-4F44-B6BC-5530E56C9F39}
+	EndGlobalSection
+EndGlobal

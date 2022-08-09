@@ -1,0 +1,3 @@
+type SendNotificationModel = {
+    data: String;
+};

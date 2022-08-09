@@ -1,0 +1,57 @@
+version: '3.4'
+
+services:
+  sc.usermanagment.api:
+    image: ${DOCKER_REGISTRY-}scusermanagmentapi
+    build:
+      context: .
+      dockerfile: Backend/UserManagment/SC.UserManagment.Api/Dockerfile.Dev
+
+  sc.mailer.api:
+    image: ${DOCKER_REGISTRY-}scmailerapi
+    build:
+      context: .
+      dockerfile: Backend/secure_cane_mailer/Dockerfile.Dev
+
+  sc.tracker.api:
+    image: ${DOCKER_REGISTRY-}sctrackerapi
+    build:
+      context: .
+      dockerfile: Backend/TrackerAPI/Dockerfile.Dev
+
+  sc.appli.front:
+    image: ${DOCKER_REGISTRY-}scapplifront
+    build:
+      context: .
+      dockerfile: Frontend/SC.Site.Application/frontend/Dockerfile.Dev
+
+  local.sso.keycloak:
+    image: ${DOCKER_REGISTRY-}scssokeycloak
+    build:
+      context: .
+      dockerfile: Backend/SSO/KeyCloak/Dockerfile.Dev
+
+  # local.sso.postgres:
+  # local.redis:
+  # redis.commander:
+      
+  sc.appli.test:
+    image: ${DOCKER_REGISTRY-}scapplitest
+    container_name: scapplitest
+    hostname: scapplitest
+    build:
+      context: .
+      dockerfile: Frontend/SC.Site.Application/keycloak-oidc-reactjs-main/Dockerfile.Dev
+      target: build
+    command: npm start
+    ports:
+    - "3300:3300"
+    volumes:
+    - ./Frontend/SC.Site.Application/keycloak-oidc-reactjs-main:/app
+#    - test_node_modules:/app/node_modules
+    environment:
+    - PORT=3300
+
+volumes:
+  test_node_modules:
+      

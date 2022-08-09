@@ -1,0 +1,82 @@
+version: '3.4'
+
+services:
+  local.azurite:
+    ports:
+      - "10000:10000"
+      - "10001:10001"
+      - "10002:10002"
+
+  local.redis:
+    environment:
+      - REDIS_PASSWORD=redis
+    ports:
+     - "6379"
+     
+  redis.commander:
+    ports:
+    - "8081:8081"
+
+  sc.usermanagment.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/run/secrets/userapi-certificate
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=3b677945-db81-4e9b-a2a0-74a4fc69bdc1
+      - ConnectionStrings__CosmosTableApi=AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;DefaultEndpointsProtocol=http;BlobEndpoint=http://localazurite:10000/devstoreaccount1;QueueEndpoint=http://localazurite:10001/devstoreaccount1;TableEndpoint=http://localazurite:10002/devstoreaccount1;
+    ports:
+      - "5000:80"
+      - "5443:443"
+
+      
+  sc.mailer.api:
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+    - "8000:8000"
+
+      
+  sc.tracker.api:
+    environment:
+      - ENVIRONMENT=Development
+      - REDIS_PASSWORD=redis
+    ports:
+    - "4000:4000"
+
+      
+  sc.appli.front:
+    hostname: scapplifront
+    environment:
+      - ENVIRONMENT=Development
+    ports:
+    - "3300:80"
+    
+  local.sso.keycloak:
+    hostname: scssokeycloak
+    ports:
+    - "8080:8080"
+    - "8443:8443"
+    environment:
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+      - KEYCLOAK_ADMIN=admin
+      - KC_DB_URL=jdbc:postgresql://scssopostgres/keycloak
+      - KC_DB_URL_PORT=5432
+      - KC_DB=postgres
+      - KC_DB_USERNAME=keycloak
+      - KC_DB_PASSWORD=password
+      - KC_HOSTNAME=scssokeycloak
+      
+  local.sso.postgres:
+    hostname: scssopostgres
+    ports:
+    - "5432:5432"
+    environment:
+    - POSTGRES_DB=keycloak
+    - POSTGRES_USER=keycloak
+    - POSTGRES_PASSWORD=password
+    
+  local.swagger.editor:
+    hostname: swaggereditor
+    ports:
+    - "3500:8080"

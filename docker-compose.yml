@@ -1,0 +1,129 @@
+version: '3.4'
+
+services:
+      
+  local.azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    container_name: localazurite
+    restart: unless-stopped
+    command:
+      - "azurite"
+      - "--queueHost"
+      - "0.0.0.0"
+      - "--blobHost"
+      - "0.0.0.0"
+      - "--tableHost"
+      - "0.0.0.0"
+      - "--disableProductStyleUrl"
+    networks:
+      - backend-net
+
+  local.redis:
+    image: redis
+    container_name: localredis
+    hostname: localredis
+    restart: unless-stopped
+    networks:
+      - backend-net
+
+  redis.commander:
+    image: rediscommander/redis-commander:latest
+    container_name: redis-commander
+    hostname: redis-commander
+    restart: unless-stopped
+    volumes:
+      - ./Backend/RedisCommander/connections.json:/redis-commander/config/local-production.json
+    depends_on:
+    - local.redis
+    networks:
+      - backend-net
+      - frontend-net
+
+  sc.usermanagment.api:
+    image: ${DOCKER_REGISTRY-}scusermanagmentapi:prod
+    container_name: scusermanagmentapi
+    build:
+      context: .
+      dockerfile: Backend/UserManagment/SC.UserManagment.Api/Dockerfile
+    depends_on:
+    - local.azurite
+    secrets:
+      - userapi-certificate
+    networks:
+      - backend-net
+
+  sc.mailer.api:
+    image: ${DOCKER_REGISTRY-}scmailerapi:prod
+    container_name: scmailerapi
+    build:
+      context: .
+      dockerfile: Backend/secure_cane_mailer/Dockerfile
+    networks:
+      - backend-net
+
+  sc.tracker.api:
+    image: ${DOCKER_REGISTRY-}sctrackerapi:prod
+    container_name: sctrackerapi
+    build:
+      context: .
+      dockerfile: Backend/TrackerAPI/Dockerfile
+    depends_on:
+    - local.redis
+    networks:
+      - backend-net
+
+  sc.appli.front:
+    image: ${DOCKER_REGISTRY-}scapplifront:prod
+    container_name: scapplifront
+    build:
+      context: .
+      dockerfile: Frontend/SC.Site.Application/frontend/Dockerfile
+    networks:
+      - backend-net
+      - frontend-net
+
+  local.sso.keycloak:
+    image: ${DOCKER_REGISTRY-}scssokeycloak:prod
+    build:
+      context: .
+      dockerfile: Backend/SSO/KeyCloak/Dockerfile
+    container_name: scssokeycloak
+    depends_on:
+    - local.sso.postgres
+    networks:
+      - backend-net
+      - frontend-net
+      
+  local.sso.postgres:
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    container_name: scssopostgres
+    networks:
+      - backend-net
+
+  local.swagger.editor:
+    image: swaggerapi/swagger-editor
+    container_name: swaggereditor
+    networks:
+      - frontend-net
+
+  # sc.appli.test:
+  #   container_name: scapplitest
+  #   networks:
+  #     - backend-net
+  #     - frontend-net
+
+      
+
+networks:
+  backend-net: {}
+  frontend-net: {}
+
+volumes:
+  postgres_data:
+      driver: local
+
+secrets:
+  userapi-certificate:
+    file: ./Infra/Dev/userapi/certificates/SC.UserManagment.Api.pfx

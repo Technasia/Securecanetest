@@ -1,0 +1,74 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "sc.usermanagment.api",
+      "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}/swagger",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "local.azurite": "StartWithoutDebugging",
+        "local.redis": "StartWithoutDebugging",
+        "local.sso.keycloak": "StartWithoutDebugging",
+        "local.sso.postgres": "StartWithoutDebugging",
+        "local.swagger.editor": "StartWithoutDebugging",
+        "redis.commander": "StartWithoutDebugging",
+        "sc.appli.front": "StartWithoutDebugging",
+        "sc.mailer.api": "StartWithoutDebugging",
+        "sc.tracker.api": "StartWithoutDebugging",
+        "sc.usermanagment.api": "StartDebugging"
+      }
+    },
+    "Docker Compose UserAPI": {
+      "commandName": "DockerCompose",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "sc.usermanagment.api",
+      "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}/swagger",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "local.azurite": "StartWithoutDebugging",
+        "local.redis": "DoNotStart",
+        "local.sso.keycloak": "StartWithoutDebugging",
+        "local.sso.postgres": "StartWithoutDebugging",
+        "local.swagger.editor": "DoNotStart",
+        "redis.commander": "DoNotStart",
+        "sc.appli.front": "StartWithoutDebugging",
+        "sc.mailer.api": "DoNotStart",
+        "sc.tracker.api": "StartWithoutDebugging",
+        "sc.usermanagment.api": "StartDebugging"
+      }
+    },
+    "Docker Compose MailerAPI": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "local.azurite": "DoNotStart",
+        "local.redis": "DoNotStart",
+        "local.sso.keycloak": "DoNotStart",
+        "local.sso.postgres": "DoNotStart",
+        "local.swagger.editor": "DoNotStart",
+        "redis.commander": "DoNotStart",
+        "sc.appli.front": "DoNotStart",
+        "sc.mailer.api": "StartWithoutDebugging",
+        "sc.tracker.api": "DoNotStart",
+        "sc.usermanagment.api": "DoNotStart"
+      }
+    },
+    "Docker Compose AppliFront": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "local.azurite": "DoNotStart",
+        "local.redis": "DoNotStart",
+        "local.sso.keycloak": "StartWithoutDebugging",
+        "local.sso.postgres": "StartWithoutDebugging",
+        "local.swagger.editor": "DoNotStart",
+        "redis.commander": "DoNotStart",
+        "sc.appli.front": "StartWithoutDebugging",
+        "sc.mailer.api": "DoNotStart",
+        "sc.tracker.api": "DoNotStart",
+        "sc.usermanagment.api": "DoNotStart"
+      }
+    }
+  }
+}

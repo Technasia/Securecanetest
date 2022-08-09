@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" Sdk="Microsoft.Docker.Sdk">
+  <PropertyGroup Label="Globals">
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectVersion>2.1</ProjectVersion>
+    <DockerTargetOS>Linux</DockerTargetOS>
+    <ProjectGuid>3f459430-9273-4340-ac76-05ffb0d4d83c</ProjectGuid>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerServiceName>sc.usermanagment.api</DockerServiceName>
+  </PropertyGroup>
+  <Choose>
+    <When Condition=" '$(Configuration)'=='Debug' ">
+      <PropertyGroup Label="Debug">
+        <AdditionalComposeFilePaths>docker-compose.dev.yml</AdditionalComposeFilePaths>
+      </PropertyGroup>
+    </When>
+    <When Condition=" '$(Configuration)'=='Release' ">
+      <PropertyGroup Label="Release">
+        <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
+      </PropertyGroup>
+    </When>
+    <When Condition=" '$(Configuration)'=='DockerDev' ">
+      <PropertyGroup Label="DockerDev">
+        <DockerServiceUrl>http://localhost:3300/</DockerServiceUrl>
+        <AdditionalComposeFilePaths>docker-compose.dev.yml</AdditionalComposeFilePaths>
+      </PropertyGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <None Include="docker-compose.dev.yml">
+      <DependentUpon>docker-compose.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.override.yml">
+      <DependentUpon>docker-compose.yml</DependentUpon>
+    </None>
+    <None Include="docker-compose.yml" />
+    <None Include=".dockerignore" />
+  </ItemGroup>
+</Project>
