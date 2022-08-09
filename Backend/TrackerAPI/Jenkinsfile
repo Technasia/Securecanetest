@@ -9,7 +9,7 @@ pipeline {
         registryCredentialsId 'Dockerhub'
     }
 }
-     //stages {
+     stages {
         stage('push after build') {
             agent any
             steps {
@@ -22,4 +22,4 @@ pipeline {
     }
 }   
 }
-//}
+}
