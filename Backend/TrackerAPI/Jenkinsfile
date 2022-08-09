@@ -1,5 +1,14 @@
 pipeline {
-     agent { dockerfile { dir './Backend/TrackerAPI' } }
+     //agent { dockerfile { dir './Backend/TrackerAPI' } }
+     agent {
+    dockerfile {
+        filename 'Dockerfile'
+        dir './Backend/TrackerAPI'
+        label 'my-defined-label'
+        registryUrl 'https://hub.docker.com/repository/docker/technasia/securecane'
+        registryCredentialsId 'Dockerhub'
+    }
+}
     stages {
         stage('run') {
             steps {
