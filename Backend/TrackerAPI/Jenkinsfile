@@ -5,7 +5,7 @@ pipeline {
         filename 'Dockerfile'
         dir './Backend/TrackerAPI'
         //label 'my-defined-label'
-        registryUrl 'https://hub.docker.com/repository/docker/technasia/securecane'
+        registryUrl 'https://hub.docker.com/r/technasia/securecane'
         registryCredentialsId 'Dockerhub'
     }
 }
