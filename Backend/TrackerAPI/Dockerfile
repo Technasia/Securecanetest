@@ -13,7 +13,7 @@ RUN npm install
 # RUN npm ci --only=production
 
 # Bundle app source
-COPY ["Backend/TrackerAPI/", "."]
+COPY ["./", "."]
 
 EXPOSE 4000
 CMD [ "node", "server.js" ]
