@@ -1,5 +1,5 @@
 pipeline {
-     agent { dockerfile { dir './Backend/TrackerAPI/' } }
+     agent { dockerfile { dir './Backend/TrackerAPI' } }
     stages {
         stage('run') {
             steps {
