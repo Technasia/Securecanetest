@@ -9,20 +9,16 @@ pipeline {
         registryCredentialsId 'Dockerhub'
     }
 }
-     //stages {
-        //stage('push after build') {
-            //agent
-            //steps {
-                //sh 'docker push technasia/securecane'
-            //}
-        //}
-    //}
-     stages {    
-      stage('Push image') {
-        docker.withRegistry('https://index.docker.io/v1/', 'Dockerhub') {  
-        app.push("${env.BUILD_NUMBER}")            
-        app.push("latest")        
-              }    
-           }
+     stages {
+        stage('push after build') {
+            steps {
+               script { 
+                docker.withRegistry('https://index.docker.io/v1/', 'Dockerhub') {
+                    app.push("${env.BUILD_NUMBER}")
+                    app.push("latest")
+            }
         }
+    }
+}   
+}
 }
