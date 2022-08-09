@@ -5,14 +5,14 @@ pipeline {
         filename 'Dockerfile'
         dir './Backend/TrackerAPI'
         //label 'my-defined-label'
-        registryUrl 'https://hub.docker.com/r/technasia/securecane'
+        registryUrl 'https://index.docker.io/v1/'
         registryCredentialsId 'Dockerhub'
     }
 }
     stages {
-        stage('run') {
+        stage('push after build') {
             steps {
-                sh 'curl localhost:4000'
+                sh 'docker push technasia/securecane'
             }
         }
     }
