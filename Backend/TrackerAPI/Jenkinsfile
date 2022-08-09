@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('push after build') {
             steps {
-                sh 'docker push technasia/securecane'
+             sh 'docker push technasia/securecane:TrackerAPI'
             }
         }
     }
