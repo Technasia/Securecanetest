@@ -9,10 +9,10 @@ pipeline {
         registryCredentialsId 'Dockerhub'
     }
 }
-    stage {
+    stages {
         stage('push after build') {
             steps {
-             sh 'docker push technasia/securecane:TrackerAPI'
+                sh 'docker push technasia/securecane'
             }
         }
     }
