@@ -10,9 +10,17 @@ pipeline {
     }
 }
 
-    stage('push after build') {
-        steps {
-        sh '/usr/bin/docker push technasia/securecane:TrackerAPI'
+   stage('stuff not in docker') {
+            steps {
+                 sh 'docker push technasia/securecane:TrackerAPI'
+            }
         }
+
+    stage {
+        stage('push after build') {
+            steps {
+             sh 'docker push technasia/securecane:TrackerAPI'
+            }
         }
+    }
 }
